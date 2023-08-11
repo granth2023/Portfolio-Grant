@@ -35,6 +35,19 @@ export default function Navbar() {
                                 }`}
                                 >
                                     Home
+                                </Link>
+                                <Link
+                                href="/about"href="/projects"
+                                prefetch
+                                className={`${
+                                    pathname === "/projects"
+                                    ? "border-teal-500 dark:text-white h-full inline-flex items-center px-1 border-b-2 text-sm font-medium"
+                                    : "border-transparent text-gray-500 dark:text-gray-300 dark:hover:text-white infline-flex items-center px-1 pt-1 obrder-b-2 text-sm font-medium"
+                                }`}
+                               >
+                                Projects
+                                </Link> 
+                                <Themebutton/>
                             </div>
                         </div>
                         <
