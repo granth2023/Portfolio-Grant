@@ -72,12 +72,12 @@ export default function Home() {
           I develop full-stack applications using MongoDB, Django, Python, Sanity, Next.js, React, and Tailwind CSS.  
           </p>
           <p>
-           My backgroung includes social media strategy, customer success, hospitality, creative writing, and filmmaking. I value storytelling, strong communication, collaboration, indepedenct thinking, and problem solving.
+           My backgroung includes social media strategy, customer success, hospitality, creative writing, and filmmaking. I value storytelling, strong communication, collaboration, creativtiy, and problem solving.
           </p>
           <p>
            I am available to help you build responsive websites, web applications, and content management systems. 
 
-           Contact me through this website!
+           Contact me through this website!!
           </p>
         </div>
       </div>
