@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Grant from "@/public/Grant-07.jpg";
+import Layout from './layout'
 
 export default function Home() { 
   return ( 
