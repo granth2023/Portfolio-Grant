@@ -14,22 +14,25 @@ export default function Home() {
         <Image 
           alt="Picture of Grant"
           src={Grant}
-          className="h-48 w-48 rounded-full boject-cover object-top"
+          width={192}
+          height={192}
+          className=" rounded-full object-cover object-top"
           /> 
           <h3 className="pt-4 pb-2 text-2xl front-bold leading-8 tracking-tight"> 
             Grant Harris
           </h3>
-      <p className ="text-gray-500 dark:text-gray-300 text-center"> 
-        Click
-        <a 
-          href="https://docs.google.com/document/d/1ukaBYnbsMWb6IH_FeVD0kqJ_RA7JsY0JncO1RBg18I4/edit?usp=sharing "
-          target ="_blank"
-          > 
-            {""}  
-            <b>here</b>
-            </a>{""}
+          <p className="text-gray-500 dark:text-gray-300 text-left">
+            Click
+            <a
+              href="https://docs.google.com/document/d/1N-iVjoFL9E3qi3YkVxwRuebd5it5VY1WUisPhMRqYhc/edit?usp=sharing"
+              target="_blank"
+            >
+              {" "}
+              <b>here</b>
+            </a>{" "}
             to view my resume
-      </p>
+          </p>
+
     <div className="flex space-x-5 pt-6"> 
       <a href="https://github.com/granth2023" target = "_blank"> 
       <svg

@@ -7,7 +7,7 @@ import { Provider } from "./components/Provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Leo Tulchin",
+  title: "Grant Harris",
   description:
     "Portfolio built with next.js, typescript, tailwind, sanity, and planetscale",
 };
