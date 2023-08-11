@@ -1,9 +1,10 @@
 import Image from 'next/image';
 import Grant from "@/public/Grant-07.jpg";
-import Layout from './layout'
+import Layout from './layout';
 
 export default function Home() { 
   return ( 
+    <Layout>
     <div className="divide-y divide-gray-199 dark:divide-gray-700"> 
     <div className="space-y-2 pt-5 pb-8 md:space-x-5">
       <h1 className="text-3xl front-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-13"> 
@@ -81,5 +82,6 @@ export default function Home() {
         </div>
       </div>
     </div>
+    </Layout>
   );
 }
