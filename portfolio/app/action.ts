@@ -7,7 +7,7 @@ export async function postEntry(formData: FormData) {
     "use server";
 
     const data = await prisma.guestbook.create({
-        data : { 
+        data: { 
             message: formData.get("entry") as string,
             username: "hello",
         },
