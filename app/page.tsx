@@ -66,16 +66,16 @@ export default function Home() {
 
         <div className="prose max-w-none prose-lg pt-8 pb-7 dark:prose-invert xl:col-span-2">
           <p>
-            Hello! Welcome to the portfolio, I am Grant Harris a full stack engineer and writer based in New York City. Please check out my resume and feel free to reach out to me with any questions.
+            Hello, welcome to the portfolio! I am Grant Harris, a full stack engineer and writer based in New York City.
           </p>
           <p>
           I develop full-stack applications using MongoDB, Django, Python, Sanity, Next.js, React, and Tailwind CSS.  
           </p>
           <p>
-           My backgroung includes social media strategy, customer success, hospitality, creative writing, and filmmaking. I value storytelling, strong communication, collaboration, creativtiy, and problem solving.
+           My background includes social media strategy, customer success, hospitality, creative writing, and filmmaking. I value storytelling, strong communication, collaboration, creativity, and problem solving.
           </p>
           <p>
-           I am available to help you build responsive websites, web applications, and content management systems. 
+           I am available to help you build responsive websites, web applications, and content management systems. Please check out my resume, and feel free to reach out to me with any questions through my email! 
 
            Contact me through this website!!
           </p>
