@@ -77,7 +77,7 @@ export default function Home() {
           <p>
            I am available to help you build responsive websites, web applications, and content management systems. Please check out my resume, and feel free to reach out to me with any questions through my email! 
 
-           Contact me through this website!!
+          
           </p>
         </div>
       </div>
