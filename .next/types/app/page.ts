@@ -1,4 +1,4 @@
-// File: /Users/gsh/code/next/portfolio/nextjs_portoflio/app/page.tsx
+// File: /Users/gsh/code/September_2023/Portfolio-Grant/app/page.tsx
 import * as entry from '../../../app/page.js'
 import type { ResolvingMetadata } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
