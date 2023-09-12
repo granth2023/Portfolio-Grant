@@ -46,5 +46,5 @@ LiveJournal.getInitialProps = async () => {
   };
 }
 
-export { LiveJournal };
+export default LiveJournal ;
  
