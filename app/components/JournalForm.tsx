@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from 'react';
 import { createJournalEntry } from '../../sanityClient';  // Make sure you update this import to point to your actual Sanity.io setup
 
@@ -7,6 +9,7 @@ interface JournalEntry {
 }
 
 const JournalForm: React.FC = () => {
+    
     const [entry, setEntry] = useState<JournalEntry>({ title: '', content: '' });
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
