@@ -12,7 +12,7 @@ interface LiveJournalProps {
   entries: JournalEntry[];
 }
 
-export default function LiveJournal({ entries }: LiveJournalProps) {
+ function LiveJournal({ entries }: LiveJournalProps) {
   return (
     <div className="container mx-auto px-4 mt-6">
       <Head>
@@ -45,3 +45,6 @@ LiveJournal.getInitialProps = async () => {
     entries: entries || []
   };
 }
+
+export { LiveJournal };
+ 
