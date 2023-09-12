@@ -26,24 +26,35 @@ export default function Navbar() {
                   <Link
                     href="/"
                     prefetch
-                    className={`${
+                    className={
                       pathname === "/"
                         ? "border-teal-500 dark:text-white h-full inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
                         : "border-transparent text-gray-500 dark:text-gray-300 dark:hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
-                    }`}
+                    }
                   >
                     Home
                   </Link>
                   <Link
                     href="/projects"
                     prefetch
-                    className={`${
+                    className={
                       pathname === "/projects"
                         ? "border-teal-500 dark:text-white h-full inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
                         : "border-transparent text-gray-500 dark:text-gray-300 dark:hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
-                    }`}
+                    }
                   >
                     Projects
+                  </Link>
+                  <Link
+                    href="/livejournal"
+                    prefetch
+                    className={
+                      pathname === "/livejournal"
+                        ? "border-teal-500 dark:text-white h-full inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                        : "border-transparent text-gray-500 dark:text-gray-300 dark:hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                    }
+                  >
+                    Live Journal
                   </Link>
                   <Themebutton />
                 </div>
@@ -93,35 +104,35 @@ export default function Navbar() {
               <Link
                 href="/"
                 prefetch
-                className={`${
-                  pathname == "/"
+                className={
+                  pathname === "/"
                     ? "bg-teal-50  border-teal-500 text-teal-500 block pl-3 pr-4 py-2 border-l-4 text-base font-medium dark:bg-gray-800"
                     : "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-teal-500 block pl-3 pr-4 py-2 dark:hover:bg-gray-700 border-l-4 text-base font-medium dark:text-white"
-                } `}
+                }
               >
                 Home
               </Link>
-              {/* <Link
-                href="/guestbook"
-                prefetch
-                className={`${
-                  pathname == "/guestbook"
-                    ? "bg-teal-50 border-teal-500 text-teal-500 block pl-3 pr-4 py-2 border-l-4 text-base font-medium dark:bg-gray-800"
-                    : "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-teal-500 block pl-3 pr-4 py-2 dark:hover:bg-gray-700 border-l-4 text-base font-medium dark:text-white"
-                } `}
-              >
-                Guestbook
-              </Link> */}
               <Link
                 href="/projects"
                 prefetch
-                className={`${
-                  pathname == "/projects"
+                className={
+                  pathname === "/projects"
                     ? "bg-teal-50 border-teal-500 text-teal-500 block pl-3 pr-4 py-2 border-l-4 text-base font-medium dark:bg-gray-800"
                     : "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-teal-500 block pl-3 pr-4 py-2 dark:hover:bg-gray-700 border-l-4 text-base font-medium dark:text-white"
-                } `}
+                }
               >
                 Projects
+              </Link>
+              <Link
+                href="/livejournal"
+                prefetch
+                className={
+                  pathname === "/livejournal"
+                    ? "bg-teal-50 border-teal-500 text-teal-500 block pl-3 pr-4 py-2 border-l-4 text-base font-medium dark:bg-gray-800"
+                    : "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-teal-500 block pl-3 pr-4 py-2 dark:hover:bg-gray-700 border-l-4 text-base font-medium dark:text-white"
+                }
+              >
+                Live Journal
               </Link>
             </div>
           </Disclosure.Panel>
