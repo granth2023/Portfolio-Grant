@@ -4,7 +4,8 @@ import JournalForm from '../components/JournalForm';
 
 interface JournalEntry {
   _id: string;
-  text: string;
+  title: string;
+  content: string;
   date: string;
 }
 
@@ -23,7 +24,7 @@ interface LiveJournalProps {
       <section className="mt-10">
         {entries && entries.map((entry: JournalEntry) => (
           <div key={entry._id} className="mb-6 p-4 rounded shadow bg-white" style={{ color: 'black', backgroundColor: 'white' }}>
-            <p className="text-black">{entry.text}</p>
+            <p className="text-black">{entry.content}</p>
             <small className="text-gray-600">{new Date(entry.date).toLocaleDateString()}</small>
           </div>
         ))}
@@ -35,7 +36,8 @@ interface LiveJournalProps {
 LiveJournal.getInitialProps = async () => {
   const query = `*[_type == "journalEntry"] | order(date desc) {
     _id,
-    text,
+    title, 
+    content,
     date,
   }`;
 

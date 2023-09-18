@@ -1,6 +1,3 @@
-// Removed the DocumentType import since it's not used anymore.
-// If later you find a relevant type or create your own type, you can reintroduce it.
-
 export const journalEntry = {
     name: 'journalEntry',
     title: 'Journal Entry',
@@ -16,18 +13,21 @@ export const journalEntry = {
           timeStep: 15,
           calendarTodayLabel: 'Today'
         },
-        // Explicitly set the type of Rule as any to avoid the implicit 'any' type warning
         validation: (Rule: any) => Rule.required(),
       },
       {
-        name: 'text',
-        title: 'Entry Text',
+        name: 'title', // Adding the title field
+        title: 'Entry Title',
+        type: 'string',
+        validation: (Rule: any) => Rule.required().min(1).max(100),  // Adjust constraints as needed
+      },
+      {
+        name: 'content',  // Renamed from 'text' to 'content' for clarity
+        title: 'Entry Content',
         type: 'text',
-        // Explicitly set the type of Rule as any here as well
-        validation: (Rule: any) => Rule.required().min(5).max(2000),  // Adjust constraints as needed
+        validation: (Rule: any) => Rule.required().min(5).max(2000),
       },
     ],
   };
   
-  export default journalEntry;
-  
+export default journalEntry;

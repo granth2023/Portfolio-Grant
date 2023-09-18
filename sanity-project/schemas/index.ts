@@ -1,3 +1,4 @@
 import project from './project';
+import journalEntry from './journalEntry'
 
-export const schemaTypes = [project]
+export const schemaTypes = [project, journalEntry]
