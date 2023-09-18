@@ -1,3 +1,5 @@
+"use client"
+
 import Head from 'next/head';
 import sanityClient from '../../sanityClient';
 import JournalForm from '../components/JournalForm';
