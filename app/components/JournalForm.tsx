@@ -1,15 +1,16 @@
 "use client";
 
 import React, { useState } from 'react';
-import { createJournalEntry } from '../../sanityClient'; // Update this import to point to your actual Sanity.io setup
+import { createJournalEntry } from '../../sanityClient';
 
 interface JournalEntry {
   title: string;
   content: string;
+  date: string; // Adding date property
 }
 
 const JournalForm: React.FC = () => {
-  const [entry, setEntry] = useState<JournalEntry>({ title: '', content: '' });
+  const [entry, setEntry] = useState<JournalEntry>({ title: '', content: '', date: '' }); // Initialize date in the state
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -20,8 +21,7 @@ const JournalForm: React.FC = () => {
     e.preventDefault();
     try {
       await createJournalEntry(entry);
-      // After a successful submission, you might want to clear the form
-      setEntry({ title: '', content: '' });
+      setEntry({ title: '', content: '', date: '' }); // Reset date as well after submission
     } catch (error) {
       console.error("Error creating journal entry:", error);
     }
@@ -30,13 +30,22 @@ const JournalForm: React.FC = () => {
   return (
     <form onSubmit={handleSubmit}>
       <div>
+        <label>Date:</label>
+        <input
+          type="datetime-local"  // Input type for date and time
+          name="date"
+          value={entry.date}
+          onChange={handleChange}
+        />
+      </div>
+      <div>
         <label>Title:</label>
         <input
           type="text"
           name="title"
           value={entry.title}
           onChange={handleChange}
-          style={{ color: 'black' }} // Add the style attribute to set the font color to black
+          style={{ color: 'black' }}
         />
       </div>
       <div>
@@ -46,7 +55,7 @@ const JournalForm: React.FC = () => {
           value={entry.content}
           rows={5}
           onChange={handleChange}
-          className="text-black" // Add the className to style the textarea with black text color
+          className="text-black"
         />
       </div>
       <button type="submit">Submit</button>
