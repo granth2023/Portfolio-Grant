@@ -5,7 +5,8 @@ import { createClient } from '@sanity/client';
 const client = createClient({
   projectId: 'l2g5gn2p', 
   dataset: 'production',
-  useCdn: false
+  useCdn: false, 
+  token: process.env.SANITY_API_TOKEN
 });
 
 export default client;
