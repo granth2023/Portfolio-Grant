@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import sanityClient from '../../sanityClient';
 import JournalForm from '../components/JournalForm';
+import React, { useState, useEffect } from 'react';
 
 interface JournalEntry {
   _id: string;
@@ -9,39 +10,24 @@ interface JournalEntry {
   date: string;
 }
 
-interface LiveJournalProps {
-  entries: JournalEntry[];
-}
+function LiveJournal() {
+  const [entries, setEntries] = useState<JournalEntry[]>([]);
 
- function LiveJournal({ entries }: LiveJournalProps) {
-  return (
-    <div className="container mx-auto px-4 mt-6">
-      <Head>
-        <title>Live Journal - Grant Harris</title>
-      </Head>
-      <h1 className="text-3xl mb-6 font-bold text-center text-gray-700">Live Journal</h1>
-      <JournalForm />
-      <section className="mt-10">
-        {entries && entries.map((entry: JournalEntry) => (
-          <div key={entry._id} className="mb-6 p-4 rounded shadow bg-white" style={{ color: 'black', backgroundColor: 'white' }}>
-            <p className="text-black">{entry.content}</p>
-            <small className="text-gray-600">{new Date(entry.date).toLocaleDateString()}</small>
-          </div>
-        ))}
-      </section>
-    </div>
-  );
-}
+  useEffect(() => {
+    const fetchEntries = async () => {
+      const query = `*[_type == "journalEntry"] | order(date desc) {
+        _id,
+        title,
+        content,
+        date,
+      }`;
 
-LiveJournal.getInitialProps = async () => {
-  const query = `*[_type == "journalEntry"] | order(date desc) {
-    _id,
-    title, 
-    content,
-    date,
-  }`;
+      const fetchedEntries: JournalEntry[] = await sanityClient.fetch(query);
+      setEntries(fetchedEntries || []);
+    }
 
-  const entries: JournalEntry[] = await sanityClient.fetch(query);
+    fetchEntries();
+  }, []);
 
   return {
     entries: entries || []
