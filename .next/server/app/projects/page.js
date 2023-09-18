@@ -520,7 +520,7 @@ async function Projects() {
 var __webpack_require__ = require("../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [587,236,662,480,975], () => (__webpack_exec__(22308)));
+var __webpack_exports__ = __webpack_require__.X(0, [587,236,662,480,293], () => (__webpack_exec__(22308)));
 module.exports = __webpack_exports__;
 
 })();
