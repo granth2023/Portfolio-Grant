@@ -26,4 +26,4 @@ export const createJournalEntry = async (entry: { title: string; content: string
   }
 };
 
-  
+      
