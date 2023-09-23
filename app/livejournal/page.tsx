@@ -36,7 +36,7 @@ function LiveJournal() {
       <Head>
         <title>Live Journal - Grant Harris</title>
       </Head>
-      <h1 className="text-3xl mb-6 font-bold text-center text-gray-700">Live Journal</h1>
+      <h1 className="text-3xl mb-6 font-bold text-center text-gray-700"></h1>
       <JournalForm />
       <section className="mt-10">
         {entries && entries.map((entry: JournalEntry) => (

@@ -1,66 +1,49 @@
-"use client";
-
-import React, { useState } from 'react';
-import { createJournalEntry } from '../../sanityClient';
+import Head from 'next/head';
+import sanityClient from '../../sanityClient';
+import React, { useState, useEffect } from 'react';
 
 interface JournalEntry {
+  _id: string;
   title: string;
   content: string;
-  date: string; // Adding date property
+  date: string;
 }
 
-const JournalForm: React.FC = () => {
-  const [entry, setEntry] = useState<JournalEntry>({ title: '', content: '', date: '' }); // Initialize date in the state
+function LiveJournal() {
+  const [entries, setEntries] = useState<JournalEntry[]>([]);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setEntry(prev => ({ ...prev, [name]: value }));
-  }
+  useEffect(() => {
+    const fetchEntries = async () => {
+      const query = `*[_type == "journalEntry"] | order(date desc) {
+        _id,
+        title,
+        content,
+        date,
+      }`;
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    try {
-      await createJournalEntry(entry);
-      setEntry({ title: '', content: '', date: '' }); // Reset date as well after submission
-    } catch (error) {
-      console.error("Error creating journal entry:", error);
+      const fetchedEntries: JournalEntry[] = await sanityClient.fetch(query);
+      setEntries(fetchedEntries || []);
     }
-  }
+
+    fetchEntries();
+  }, []);
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label>Date:</label>
-        <input
-          type="datetime-local"  // Input type for date and time
-          name="date"
-          value={entry.date}
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <label>Title:</label>
-        <input
-          type="text"
-          name="title"
-          value={entry.title}
-          onChange={handleChange}
-          style={{ color: 'black' }}
-        />
-      </div>
-      <div>
-        <label>Content:</label>
-        <textarea
-          name="content"
-          value={entry.content}
-          rows={5}
-          onChange={handleChange}
-          className="text-black"
-        />
-      </div>
-      <button type="submit">Submit</button>
-    </form>
+    <div className="container mx-auto px-4 mt-6">
+      <Head>
+        <title>Live Journal - Grant Harris</title>
+      </Head>
+      <h1 className="text-3xl mb-6 font-bold text-center text-gray-700">Live Journal</h1>
+      <section className="mt-10">
+        {entries && entries.map((entry: JournalEntry) => (
+          <div key={entry._id} className="mb-6 p-4 rounded shadow bg-white" style={{ color: 'black', backgroundColor: 'white' }}>
+            <p className="text-black">{entry.content}</p>
+            <small className="text-gray-600">{new Date(entry.date).toLocaleDateString()}</small>
+          </div>
+        ))}
+      </section>
+    </div>
   );
 }
 
-export default JournalForm;
+export default LiveJournal;
