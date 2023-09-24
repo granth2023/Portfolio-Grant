@@ -1,14 +1,13 @@
-"use client"
-
+// Import BlockContent
+import BlockContent from '@sanity/block-content-to-react';
 import Head from 'next/head';
 import sanityClient from '../../sanityClient';
-// import JournalForm from '../components/JournalForm';
 import React, { useState, useEffect } from 'react';
 
 interface JournalEntry {
   _id: string;
   title: string;
-  content: string;
+  content: any;  // Update the type of the 'content' field to 'any' (or a more specific type if you prefer)
   date: string;
 }
 
@@ -41,7 +40,8 @@ function LiveJournal() {
       <section className="mt-10">
         {entries && entries.map((entry: JournalEntry) => (
           <div key={entry._id} className="mb-6 p-4 rounded shadow bg-white" style={{ color: 'black', backgroundColor: 'white' }}>
-            <p className="text-black">{entry.content}</p>
+            {/* Use BlockContent to render the 'content' field */}
+            <BlockContent blocks={entry.content} />
             <small className="text-gray-600">{new Date(entry.date).toLocaleDateString()}</small>
           </div>
         ))}
