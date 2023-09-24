@@ -22,12 +22,12 @@ export const journalEntry = {
       validation: (Rule: any) => Rule.required().min(1).max(100),  // Adjust constraints as needed
     },
     {
-      name: 'content',  // Renamed from 'text' to 'content' for clarity
+      name: 'content',
       title: 'Entry Content',
-      type: 'array',
-      of: [{type: 'block'}],
+      type: 'text',
       validation: (Rule: any) => Rule.required().min(5).max(2000),
-    },
+    }
+    
   ],
 };
 

@@ -39,12 +39,20 @@ function LiveJournal() {
       <h1 className="text-3xl mb-6 font-bold text-center text-gray-700"></h1>
       {/* <JournalForm /> */}
       <section className="mt-10">
-        {entries && entries.map((entry: JournalEntry) => (
-          <div key={entry._id} className="mb-6 p-4 rounded shadow bg-white" style={{ color: 'black', backgroundColor: 'white' }}>
-            <p className="text-black">{entry.content}</p>
-            <small className="text-gray-600">{new Date(entry.date).toLocaleDateString()}</small>
-          </div>
-        ))}
+      {entries && entries.map((entry: JournalEntry) => (
+  <div key={entry._id} className="mb-6 p-4 rounded shadow bg-white" style={{ color: 'black', backgroundColor: 'white' }}>
+    <p className="text-black">
+      {entry.content.split('\n').map((line, index) => (
+        <React.Fragment key={index}>
+          {line}
+          <br />
+        </React.Fragment>
+      ))}
+    </p>
+    <small className="text-gray-600">{new Date(entry.date).toLocaleDateString()}</small>
+  </div>
+))}
+  
       </section>
     </div>
   );
