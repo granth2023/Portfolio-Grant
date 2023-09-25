@@ -51,7 +51,7 @@ function LiveJournal() {
     </p>
     <small className="text-gray-600">{new Date(entry.date).toLocaleDateString()}</small>
   </div>
-))}
+))} 
   
       </section>
     </div>
