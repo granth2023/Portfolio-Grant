@@ -30,9 +30,17 @@ function LiveJournal() {
         content,
         date,
         image
-      }`;console.log(fetchEntries);
+      }`;
 
       const fetchedEntries: JournalEntry[] = await sanityClient.fetch(query);
+
+      // Fetch the actual image from Sanity
+      fetchedEntries.forEach(entry => {
+        if (entry.image) {
+          entry.image.asset._ref = urlFor(entry.image.asset).url();
+        }
+      });
+
       setEntries(fetchedEntries || []);
     }
 
