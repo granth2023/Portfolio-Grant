@@ -12,13 +12,14 @@ const client = createClient({
 export default client;
 
 
-export const createJournalEntry = async (entry: { title: string; content: string }) => {
+export const createJournalEntry = async (entry: { title: string; content: string; image?: any }) => {
   try {
       return await client.create({
           _type: 'journalEntry',
           title: entry.title,
           content: entry.content,  // corrected field name
-          date: new Date().toISOString()
+          date: new Date().toISOString(),
+          image: entry.image
       });
   } catch (error) {
       console.error("Error in createJournalEntry:", error);

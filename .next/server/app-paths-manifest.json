@@ -1,0 +1,4 @@
+{
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/livejournal/page": "app/livejournal/page.js"
+}
