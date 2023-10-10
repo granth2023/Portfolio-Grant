@@ -26,6 +26,15 @@ export const journalEntry = {
       title: 'Entry Content',
       type: 'text',
       validation: (Rule: any) => Rule.required().min(5).max(2000),
+    },
+    { 
+      name: 'image',
+      title: 'Entry Image',
+      type: 'image',
+      options: {
+        hotspot: true
+      }, 
+      validation: (Rule: any) => Rule.optional(),
     }
     
   ],
