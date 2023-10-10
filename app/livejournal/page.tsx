@@ -35,11 +35,7 @@ function LiveJournal() {
       const fetchedEntries: JournalEntry[] = await sanityClient.fetch(query);
 
       // Fetch the actual image from Sanity
-      fetchedEntries.forEach(entry => {
-        if (entry.image) {
-          entry.image.asset._ref = urlFor(entry.image.asset).url();
-        }
-      });
+     
 
       setEntries(fetchedEntries || []);
     }
@@ -57,7 +53,11 @@ function LiveJournal() {
         {entries && entries.map((entry: JournalEntry) => (
           <div key={entry._id} className="mb-6 p-4 rounded shadow bg-white" style={{ color: 'black', backgroundColor: 'white' }}>
             
-            {entry.image && <img src={urlFor(entry.image.asset).url()} alt={entry.title} className="rounded mb-4" />}
+            {entry.image && (
+              entry.image.asset._ref.startsWith('http') ? 
+              <img src={entry.image.asset._ref} alt={entry.title} className="rounded mb-4" /> :
+              <img src={urlFor(entry.image.asset).url()} alt={entry.title} className="rounded mb-4" />
+            )}
             
             <p className="text-black">
               {entry.content.split('\n').map((line, index) => (
@@ -72,7 +72,8 @@ function LiveJournal() {
         ))} 
       </section>
     </div>
-  );
-}
+);
+              }
+
 
 export default LiveJournal;
