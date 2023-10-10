@@ -23,7 +23,7 @@ export default function Home() {
           <p className="text-gray-500 dark:text-gray-300 text-center">
             Click
             <a
-               href="https://docs.google.com/document/d/1gSJE_YUUYMcXWH85P0wPtbC6L3FqfLsk2koFfEdSGt4/edit?usp=sharing"
+               href="../public/SDResume.pdf"
               target="_blank"
             >
               {" "}
