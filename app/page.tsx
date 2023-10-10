@@ -23,13 +23,15 @@ export default function Home() {
           <p className="text-gray-500 dark:text-gray-300 text-center">
             Click
             <a
-               href="public/SDResume.pdf"
+               href="SDResume.pdf"
               target="_blank"
+              download
             >
+              
               {" "}
               <b>here</b>
             </a>{" "}
-            to view my resume
+            to download my resume
           </p>
 
           <div className="flex space-x-5 pt-6">
