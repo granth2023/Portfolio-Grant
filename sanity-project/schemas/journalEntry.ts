@@ -25,7 +25,7 @@ export const journalEntry = {
       name: 'content',
       title: 'Entry Content',
       type: 'text',
-      validation: (Rule: any) => Rule.required().min(5).max(2000),
+      validation: (Rule: any) => Rule.required().min(5).max(20000),
     },
     { 
       name: 'image',
