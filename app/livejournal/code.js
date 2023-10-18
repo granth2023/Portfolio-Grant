@@ -477,6 +477,7 @@ if(!root) return true;
 return isMirror(root.left, root.right)
 }
 
+//we have a location so we can do that a class. Let's construct a system, big medium small, we want to use it later this.spots comes in, wiht an array, a 0 big medium small 
 class ParkingSystem {
     constructor(big, medium, small){
         this.spots = [0, big, medium, small]
@@ -491,3 +492,209 @@ class ParkingSystem {
         }
     }
     }
+
+
+
+
+
+
+// 1) Code a function named charCount that
+// accepts a string as its only argument and
+// returns an object with the count of each
+// character in the string.
+// 2) The returned object should have properties
+// // where the keys are a character in the
+// string and the value is how many times the
+// character appears in the string argument.
+// 3) Upper and lower case characters should be
+// counted separately.
+// 4) Space characters should be counted too.
+
+// For example:
+
+//    charCount("Hello there")
+
+//    would return an object like this -->
+//        { H: 1, e: 3, l: 2, o: 1, ' ': 1, t: 1, h: 1, r: 1 }
+
+------------------------------------------*/
+
+// Write the function here....
+
+function charCount(s){
+
+    let freqMap = {};
+
+    for(let i = 0; i < s.length; i++) {
+        if ( freqMap[s[i]]){
+            freqMap[s[i]]++;
+        } else { 
+            freqMap[s[i]] = 1;
+
+            //conditional to differentiate between upper and lower case
+        }
+
+
+
+
+
+    return freqMap[i];  
+}
+}
+
+
+function reverseString(s){
+    let left = 0;
+    let right = s.length -1;
+
+    arr = s.split('');
+
+    while ( left < right){
+        [arr[left],arr[right]] = [arr[right], arr[left]];
+        left++;
+        right--;
+    }
+    return arr.join('');
+}
+
+
+function maxSubArray(nums){
+    if( nums.length === 0) return [0, -1, 0]; 
+
+    let allNegative = true;
+    let maxNegative = -Infinity;
+    let maxNegativeIndex = -1;
+
+    for ( let i = 0; i < nums.length; i++){
+        if ( nums[i] >= 0){
+            allNegative = false;
+            break;
+        
+        }
+        if ( nums[i] > maxNegative){
+            maxNegative = nums[i];
+            maxNegativeIndex = i;
+        }
+
+    }
+    if (allNegative) return [maxNegative, maxNegativeIndex, maxNegative];
+}
+    let maxCurrent = 0;
+    let maxGlobal = 0;
+    currentStart = [0];
+    maxStarts = [0];
+    maxEnds = [0];
+
+    for (let i = 1; i < nums.length; i++){
+        if ( nums[i] > maxCurrent + nums[i]){
+            maxCurrent = nums[i];
+            currentStart = [i];
+        } else {
+            maxCurrent += nums[i];
+        } if ( maxCurrent > maxGlobal){
+            maxGlobal = maxCurrent;
+            maxStarts = currentStart;
+            maxEnds = i;
+        } if (maxCurrent === maxGlobal){
+            maxStarts.push(currentStart);
+            maxEnds.push(i);
+        }
+        let results = [];
+        for ( let i = 0; i < maxStarts.length; i++){
+            results.push(maxStarts[i], maxEnds[i], maxGlobal);
+        }
+    }
+
+
+    function maximumDepth(root){
+        if(!root) return 0 
+
+        let queue =[root]
+        let depth = 0;
+
+        while ( queue > 0){
+            let levelSize = queue.length;
+
+            for ( let i = 0; i < levelSize.length; i++){
+                let currentNode = queue.shift();
+                if (currentNode.left) queue.push(currentNode.left);
+                if (currentNode.right) queue.push(currentNode.right);
+            }
+            depth++;
+        }
+        return depth;
+    }
+
+function merge(intervals){
+    if(!intervals.length) return [];
+
+    intervals.sort((a,b) => a[0] - b[0]);
+
+    const merged = intervals[0];
+
+    for ( let i = 1; i<intervals.length; i++){
+        let lastMerged = merged[merged.length -1];
+        let current = intervals[i];
+
+
+        if (lastMerged[1] >= current[0]){
+            lastMerged[1] = math.max(lastMerged[1], current[1]);
+        } else  {
+            merged.push(current);
+        }
+    }
+    return merged;
+    }
+
+
+
+function parkingSytem(carType) {
+    const slot = [0, 'big', 'medium', 'small'];
+    let parkingSpots = 1;
+
+    if (slot.includes(carType) && parkingSpots > 0) {
+        parkingSpots--;
+        return true;
+    }
+
+    return false;
+
+
+    function missingNumber(nums){
+        const n = nums.length; 
+        const expectedSum = (n * (n +1) / 2);
+        let sum = 0;
+
+        for ( let num of nums){
+            sum += num 
+        }
+
+        return expectedSum - sum;
+    }
+}
+
+function maxsubString(s){
+    let n = s.length;
+
+    let set = new Set();
+
+    let left = 0;
+    let right = 0;
+    let maxLength = 0;
+
+    while ( right < n){
+        if(!set.has(s[right])){
+            set.add(s[right]);
+            maxLength = math.max(maxLength, right - left + 1);
+            right++;
+        } else { 
+            set.delete(s[left]);
+            left++;
+        }
+
+    }
+        return maxLength;
+
+}
+
+

@@ -68,16 +68,16 @@ export default function Home() {
 
         <div className="prose max-w-none prose-lg pt-8 pb-7 dark:prose-invert xl:col-span-2">
           <p>
-            Hello, welcome to the portfolio! I am Grant Harris, a full stack engineer and writer based in New York City.
+            Hello and welcome! I'm Grant, a web developer familiar with full-stack engineering, OAuth, Web3, algorithms, data structures, and Agile Develoment. I'm based in Park Slope. 
           </p>
           <p>
-          I develop full-stack applications using MongoDB, Django, Python, Sanity, Next.js, React, and Tailwind CSS.  
+         Lately, I've been developing with Typsecript, Prisma, Sanity, Next.js as well as MERN. 
           </p>
           <p>
-           My background includes social media strategy, customer success, hospitality, creative writing, and filmmaking. I value storytelling, strong communication, collaboration, creativity, and problem solving.
+           My story as a coder, at this moment is a convergance of two career tracks I've been developing since graduating from UMiami in 2015. On one hand, I worked a server, dining attendant, Customer Success Representative and Social Media Contractor. This build my skillset in client-facing roles and user experiences. On the other hand, I worked as screenwriter, improvisor, director, actor, and social media strategist. This built my creative side. Coding, to me, has been the full combination of the two. I value writing user-centric apps built cleanly, dry, documented, debugged, and tested. I love to design apps, tackle coding challenges, and learning new skills. 
           </p>
           <p>
-           I am available to help you build responsive websites, web applications, and content management systems. Please check out my resume, and feel free to reach out to me with any questions through my email! 
+           I am available to work and looking forward to hearing you. Please feel free to look around and do be sure to check out the Live Journal and see my lastest postings.
 
           
           </p>
