@@ -23,7 +23,7 @@ export default function Home() {
           <p className="text-gray-500 dark:text-gray-300 text-center">
             Click
             <a
-               href="SDResume.pdf"
+               href="Fedeveloper.pdf"
               target="_blank"
               download
             >
