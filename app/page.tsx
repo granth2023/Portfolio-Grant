@@ -68,19 +68,18 @@ export default function Home() {
 
         <div className="prose max-w-none prose-lg pt-8 pb-7 dark:prose-invert xl:col-span-2">
           <p>
-            Hello and welcome! I'm Grant, a web developer familiar with full-stack software engineering, OAuth, Web3, algorithms, data structures, and Agile Develoment. I'm based in Park Slope, Brooklyn. 
+            Hello and thank you for visiting my portoflio. Please check out my projects and live journal, where I'm documenting my journey as software developer. 
           </p>
           <p>
-         Lately, I've been developing with Typsecript, Prisma, Sanity, Next.js as well as MERN. 
+         I'm a full-stack developer interested in algorithms, data structures, machine learning and A.I. integration.   
           </p>
           <p>
-           I value writing user-centric apps built cleanly, dry, documented, debugged, and tested. I love to design apps, tackle coding challenges, and learning new skills. 
+           I love writing user-centric apps and currently am working on a social media app centered around movies and film buffs. I value clean dry code and see bugs and testing as opportunties to grow.   
           </p>
-          <p>
-           I am available to work and looking forward to hearing you. Please feel free to look around and do be sure to check out the Live Journal and see my lastest postings.
+          
 
           
-          </p>
+  
         </div>
       </div>
     </div>
