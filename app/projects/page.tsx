@@ -2,26 +2,26 @@ import React from "react";
 import Image from "next/image";
 import { client } from "../lib/sanity";
 
-
 interface Data {
   title: string;
   overview: string;
   link: string;
   _id: string;
   imageUrl: string;
+  githubLink?: string;  // Optional GitHub link field
 }
 
 async function getProjects() {
   const query = `*[_type == "project"] {
     title,
-      overview,
-      link,
-      _id,
-      "imageUrl": image.asset->url
+    overview,
+    link,
+    _id,
+    "imageUrl": image.asset->url,
+    githubLink
   }`;
 
   const data = await client.fetch(query);
-
   return data;
 }
 
@@ -54,26 +54,43 @@ export default async function Projects() {
             </div>
 
             <div className="p-4 sm:p-6">
-              <a href={project.link} target="_blank">
+              <a href={project.link} target="_blank" rel="noopener noreferrer">
                 <h3 className="text-lg font-medium text-gray-900 dark:text-white">
                   {project.title}
                 </h3>
               </a>
 
-              <p className=" line-clamp-3 mt-2 text-sm leading-relaxed text-gray-500 dark:text-gray-400">
+              <p className="line-clamp-3 mt-2 text-sm leading-relaxed text-gray-500 dark:text-gray-400">
                 {project.overview}
               </p>
 
-              <a
-                href={project.link}
-                target="_blank"
-                className="group mt-4 inline-flex items-center gap-1 text-sm font-medium text-teal-500"
-              >
-                Click here to visit!
-                <span className="block transition-all group-hover:ms-0.5">
-                  &rarr;
-                </span>
-              </a>
+              <div className="mt-4 space-y-2">
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-1 text-sm font-medium text-teal-500"
+                >
+                  Click here to visit!
+                  <span className="block transition-all group-hover:ms-0.5">
+                    &rarr;
+                  </span>
+                </a>
+
+                {project.githubLink && (
+                  <a
+                    href={project.githubLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center gap-1 text-sm font-medium text-teal-500"
+                  >
+                    View on GitHub
+                    <span className="block transition-all group-hover:ms-0.5">
+                      &rarr;
+                    </span>
+                  </a>
+                )}
+              </div>
             </div>
           </article>
         ))}
