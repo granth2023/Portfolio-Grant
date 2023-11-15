@@ -63,7 +63,9 @@ export default function Cinema() {
 
         <div className="prose max-w-none prose-lg pt-8 pb-7 dark:prose-invert xl:col-span-2">
           <p>
-            Hello and thank you for visiting my portflio. Please check out my projects and live journal, where I'm documenting my journey as software developer. 
+      Click to continue:</p>
+      <p>  You're reading cinema.  </p>
+      <p> Cinema is a language</p>
           </p>
           <p>
          I'm a full-stack developer interested in algorithms, data structures, machine learning and A.I. integration.   
