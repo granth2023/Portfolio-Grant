@@ -1,4 +1,13 @@
-export {};
+// app/cinema/page.tsx
+import React from 'react';
+
+const Cinema = () => {
+  // Page content goes here
+  return <div>Page Content</div>;
+};
+
+export default Cinema;
+
 
 // export default function Cinema() {
 //   return (
