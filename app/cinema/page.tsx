@@ -66,6 +66,8 @@
 //       Click to continue:</p>
 //       <p>  You're reading cinema.  </p>
 //       <p> Cinema is a language</p>
+        // <p> welcome to the story </p>
+        // <p> open </p>
 //           </p>
 //           <p>
 //          I'm a full-stack developer interested in algorithms, data structures, machine learning and A.I. integration.   
